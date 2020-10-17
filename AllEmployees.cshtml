@@ -1,0 +1,47 @@
+﻿@model List<MVC2.Models.EmpTable111>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllEmployees</title>
+</head>
+<body>
+    <nav>
+        <div>
+            @Html.ActionLink("New Registration", "NewEmployee")
+        </div>
+    </nav>
+    <h1>List of All Employees with Us!!!</h1>
+    <hr />
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Salary</th>
+                <td>Options</td>
+            </tr>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmpId</td>
+                    <td>@emp.EmpName</td>
+                    <td>@emp.EmpAddress</td>
+                    <td>@emp.EmpSalary</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Find", new { id = emp.EmpId })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = emp.EmpId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

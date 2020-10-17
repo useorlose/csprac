@@ -1,0 +1,33 @@
+﻿
+@model MVC2.Models.EmpTable111
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+</head>
+<body>
+    <h1>Details of the Employee to update</h1>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Enter the EmpID: @Html.EditorFor((m) => m.EmpId)
+            </p>
+            <p>
+                Enter the EmpName: @Html.EditorFor((m) => m.EmpName)
+            </p>
+            <p>
+                Enter the EmpAddress: @Html.EditorFor((m) => m.EmpAddress)
+            </p>
+            <p>
+                Enter the EmpSalary: @Html.EditorFor((m) => m.EmpSalary)
+            </p>
+            <button>Save Changes</button>
+        }
+    </div>
+</body>
+</html>
+ss
